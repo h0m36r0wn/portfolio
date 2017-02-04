@@ -1,6 +1,6 @@
 var gulp  = require('gulp');
 var sass = require('gulp-sass');
-var nodemode = require('gulp-nodemon');
+var nodemon = require('gulp-nodemon');
 /*
 * sass compilation task
 **********************/
@@ -29,8 +29,8 @@ gulp.task('nodemon',function(cb){
 
 
 /*
-* defaul task - run sass and nodemon 
+* defaul task - run sass and nodemon
 *******************************************************/
-gulp.task('default',['sass','nodemon '], function(){
+gulp.task('default',['sass','nodemon'], function(){
   gulp.watch('.public/scss/*.scss',['styles']);
 })
