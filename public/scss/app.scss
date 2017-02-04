@@ -1,0 +1,41 @@
+@import "./variables";
+
+.navbar{
+  background: transparent;
+  border: 0;
+  .logo{
+    width: 80px;
+  }
+  #navbar{
+    font-family: $font-heading;
+    ul{
+      li{
+        a{
+          line-height: 49px;
+        }
+      }
+    }
+  }
+}
+
+
+#hero-section{
+  padding: 150px 0px 100px  0px;
+  min-height: 350px;
+  background: url(/images/hero.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .hero-text{
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: 5.7rem;
+  }
+}
+#mapkit-4923 {
+    min-height:350px;
+}
+
+.footer-logo{
+  width: 40px;
+}
