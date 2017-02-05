@@ -1,3 +1,9 @@
+.text-info, #what-ido p, #projects p {
+  font-family: Neuton, serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #263238; }
+
 .navbar {
   background: transparent;
   border: 0; }
@@ -23,5 +29,118 @@
 #mapkit-4923 {
   min-height: 350px; }
 
-.footer-logo {
-  width: 40px; }
+#what-ido {
+  padding: 100px 0px; }
+  #what-ido .section-main-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    display: block;
+    color: #0089e1; }
+  #what-ido .section-sub-heading {
+    font-family: Montserrat, sans-serif;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #90A4AE;
+    margin-bottom: 80px; }
+  #what-ido .sub-header {
+    font-family: Montserrat, sans-serif;
+    color: #f02f72; }
+
+#projects {
+  background: #ECEFF1;
+  padding: 100px 0px; }
+  #projects hr {
+    border-top: 1px solid #90A4AE; }
+  #projects .section-main-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    display: block;
+    color: #0089e1; }
+  #projects .section-sub-heading {
+    font-family: Montserrat, sans-serif;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #90A4AE;
+    margin-bottom: 80px; }
+  #projects .sub-header {
+    font-family: Montserrat, sans-serif;
+    color: #f02f72; }
+
+#testi {
+  padding: 100px 0px; }
+  #testi .section-main-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    display: block;
+    color: #0089e1; }
+  #testi .section-sub-heading {
+    font-family: Montserrat, sans-serif;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #90A4AE;
+    margin-bottom: 80px; }
+  #testi .sub-header {
+    font-family: Montserrat, sans-serif;
+    color: #f02f72; }
+
+#helpyou {
+  background: #0089e1;
+  padding: 100px 0px; }
+  #helpyou .section-main-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    display: block;
+    color: #0089e1; }
+  #helpyou .section-sub-heading {
+    font-family: Montserrat, sans-serif;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #90A4AE;
+    margin-bottom: 80px; }
+  #helpyou .section-main-heading, #helpyou .section-sub-heading {
+    color: #fff; }
+  #helpyou .sub-header {
+    font-family: Montserrat, sans-serif;
+    color: #fff; }
+  #helpyou h3 {
+    letter-spacing: 1px;
+    line-height: 35px; }
+
+footer #sub-footer #logo-copyright {
+  padding: 40px 0px 10px 0px; }
+  footer #sub-footer #logo-copyright .footer-logo {
+    width: 40px; }
+  footer #sub-footer #logo-copyright #copyright {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.8rem;
+    display: block;
+    color: #263238;
+    margin: 20px 0px; }
+
+footer #sub-footer #social-media-links {
+  padding-bottom: 40px; }
+  footer #sub-footer #social-media-links li {
+    display: inline; }
+    footer #sub-footer #social-media-links li a {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      margin: 0 4px;
+      height: 36px;
+      width: 36px;
+      font-size: 1.6rem;
+      line-height: 2.3;
+      background-color: rgba(0, 137, 225, 0.7);
+      border-radius: 50px;
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out; }
+      footer #sub-footer #social-media-links li a:hover {
+        background: #0089e1; }

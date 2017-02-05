@@ -1,5 +1,36 @@
 @import "./variables";
-
+@mixin section-padding(){
+  padding:100px 0px;
+}
+@mixin setion-heading(){
+  .section-main-heading{
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: $font-heading;
+    display: block;
+    color:$blue-accent;
+  }
+  .section-sub-heading{
+    font-family: $font-heading;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color:$grey-dark;
+    margin-bottom: 80px;
+  }
+}
+@mixin sub-headers($color){
+    .sub-header{
+      font-family: $font-heading;
+      color:$color;
+    }
+}
+.text-info{
+  font-family: $font-text;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color:$grey-font;
+}
 .navbar{
   background: transparent;
   border: 0;
@@ -36,6 +67,90 @@
     min-height:350px;
 }
 
-.footer-logo{
-  width: 40px;
+
+
+#what-ido{
+  @include  section-padding;
+  @include  setion-heading;
+  @include  sub-headers($red-accent);
+  p{
+    @extend .text-info;
+  }
+}
+
+#projects {
+  hr{
+
+   border-top: 1px solid $grey-dark;
+
+  }
+  background: $grey-light;
+  @include  section-padding;
+  @include  setion-heading;
+  @include  sub-headers($red-accent);
+  p{
+    @extend .text-info;
+  }
+}
+#testi{
+  @include  section-padding;
+  @include  setion-heading;
+  @include  sub-headers($red-accent);
+}
+
+#helpyou{
+  background: $blue-accent;
+  @include  section-padding;
+  @include  setion-heading;
+  .section-main-heading , .section-sub-heading{
+    color:#fff;
+  }
+
+  @include  sub-headers($white-accent);
+  h3{
+    letter-spacing: 1px;
+    line-height: 35px;
+  }
+}
+
+footer{
+
+  #sub-footer{
+    #logo-copyright{
+      padding: 40px 0px 10px 0px;
+      .footer-logo{
+        width: 40px;
+      }
+      #copyright{
+        font-family: $font-heading;
+        font-size: 1.8rem;
+        display: block;
+        color:$grey-font;
+        margin: 20px 0px;
+      }
+    }
+    #social-media-links{
+      padding-bottom: 40px;
+      li{
+          display: inline;
+          a{
+            display: inline-block;
+            color: transparentize($white-accent, 0.1);
+            text-decoration: none;
+            margin: 0 4px;
+            height: 36px;
+            width: 36px;
+            font-size: 1.6rem;
+            line-height: 2.3;
+            background-color:transparentize($blue-accent, 0.3);
+            border-radius: 50px;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            &:hover{
+              background: $blue-accent;
+            }
+          }
+      }
+    }
+  }
 }
