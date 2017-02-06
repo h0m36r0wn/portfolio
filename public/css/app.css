@@ -6,28 +6,118 @@
 
 .navbar {
   background: transparent;
+  transition: background-color 200ms linear;
   border: 0; }
   .navbar .logo {
     width: 80px; }
   .navbar #navbar {
-    font-family: Montserrat, sans-serif; }
+    font-family: Montserrat, sans-serif;
+    font-size: 2.0rem; }
+    .navbar #navbar ul li.active a {
+      background: transparent; }
+    .navbar #navbar ul li.active::after {
+      width: 100%; }
     .navbar #navbar ul li a {
-      line-height: 49px; }
+      color: #263238 !important;
+      line-height: 49px;
+      font-weight: 700; }
+    .navbar #navbar ul li::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      position: relative;
+      height: 3px;
+      background: #f02f72;
+      transition: width .3s; }
 
 #hero-section {
-  padding: 150px 0px 100px  0px;
-  min-height: 350px;
+  min-height: 550px;
+  padding: 150px 0px 0px  0px;
   background: url(/images/hero.png);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+  #hero-section .typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
   #hero-section .hero-text {
     font-family: Montserrat, sans-serif;
-    font-weight: 700;
     font-size: 5.7rem; }
+    #hero-section .hero-text #sub-about {
+      font-size: 3.0rem;
+      transition: visibility 0s, opacity 0.5s linear;
+      visibility: hidden;
+      opacity: 0;
+      display: block; }
+  #hero-section .btn {
+    margin-top: 20px;
+    color: #fff;
+    font-family: Montserrat, sans-serif; }
+    #hero-section .btn.btn-head-hunter {
+      background: #f02f72; }
+    #hero-section .btn.btn-customer {
+      background: #0089e1; }
+  #hero-section .page-scroll i {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    display: block; }
+  #hero-section .page-scroll:hover i {
+    padding-top: 10px; }
+  #hero-section .page-scroll a {
+    text-decoration: none;
+    color: #263238;
+    padding: 50px 0px;
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
+    display: block; }
+  #hero-section * {
+    position: relative; }
+
+.overlay:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.6;
+  z-index: 0;
+  background-image: url(/images/alpha.png); }
 
 #mapkit-4923 {
-  min-height: 350px; }
+  min-height: 400px; }
 
 #what-ido {
   padding: 100px 0px; }
@@ -47,9 +137,27 @@
   #what-ido .sub-header {
     font-family: Montserrat, sans-serif;
     color: #f02f72; }
+  #what-ido #ui-design {
+    background-image: url("/images/ui.gif");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
+  #what-ido #webapp {
+    background-image: url("/images/webapp.gif");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
+  #what-ido #weekend-hack {
+    background-image: url("/images/hack.gif");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
 
 #projects {
-  background: #ECEFF1;
+  position: relative;
   padding: 100px 0px; }
   #projects hr {
     border-top: 1px solid #90A4AE; }
@@ -69,6 +177,35 @@
   #projects .sub-header {
     font-family: Montserrat, sans-serif;
     color: #f02f72; }
+  #projects #emergencyph {
+    background-image: url("/images/emergencyph.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
+  #projects #goodchoice {
+    background-image: url("/images/goodchoice.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
+  #projects #cordova-jayme {
+    background-image: url("/images/cjc.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 250px; }
+  #projects::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: #ECEFF1;
+    transform: skew(0, -12deg); }
+  #projects * {
+    position: relative; }
 
 #testi {
   padding: 100px 0px; }
@@ -114,8 +251,41 @@
     letter-spacing: 1px;
     line-height: 35px; }
 
+footer #contact-form-section #sub-details .business-headshot {
+  border: 5px solid #fff;
+  box-sizing: border-box;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: -60px auto 0px auto; }
+  footer #contact-form-section #sub-details .business-headshot img {
+    width: 100%; }
+
+footer #contact-form-section #sub-details #phone-num {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: Montserrat, sans-serif; }
+  footer #contact-form-section #sub-details #phone-num.label {
+    background: rgba(0, 137, 225, 0.7);
+    font-size: 1.6rem; }
+  footer #contact-form-section #sub-details #phone-num.label:hover {
+    background: #0089e1; }
+
+footer #contact-form-section #client-details {
+  padding: 40px 0px; }
+  footer #contact-form-section #client-details #client-sub-details input {
+    margin-bottom: 10px; }
+  footer #contact-form-section #client-details .btn {
+    background: rgba(0, 137, 225, 0.7);
+    color: #fff;
+    font-family: Montserrat, sans-serif; }
+    footer #contact-form-section #client-details .btn:hover {
+      background: #0089e1; }
+
 footer #sub-footer #logo-copyright {
-  padding: 40px 0px 10px 0px; }
+  padding: 80px 0px 10px 0px; }
   footer #sub-footer #logo-copyright .footer-logo {
     width: 40px; }
   footer #sub-footer #logo-copyright #copyright {
@@ -126,7 +296,8 @@ footer #sub-footer #logo-copyright {
     margin: 20px 0px; }
 
 footer #sub-footer #social-media-links {
-  padding-bottom: 40px; }
+  margin-top: 20px;
+  padding-bottom: 80px; }
   footer #sub-footer #social-media-links li {
     display: inline; }
     footer #sub-footer #social-media-links li a {

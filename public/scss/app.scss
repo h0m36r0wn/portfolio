@@ -2,6 +2,37 @@
 @mixin section-padding(){
   padding:100px 0px;
 }
+@mixin image-thumb($path){
+  background-image: url($path);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 250px;
+}
+@mixin typed{
+  .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+  }
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+}
 @mixin setion-heading(){
   .section-main-heading{
     font-size: 4.5rem;
@@ -33,16 +64,41 @@
 }
 .navbar{
   background: transparent;
+  transition: background-color 200ms linear;
+
   border: 0;
   .logo{
     width: 80px;
   }
   #navbar{
     font-family: $font-heading;
+    font-size: 2.0rem;
     ul{
       li{
+        &.active{
+          a{
+            background: transparent;
+
+          }
+          &::after{
+            width: 100%;
+          }
+        }
         a{
+          color:$grey-font !important;
           line-height: 49px;
+          font-weight: 700;
+
+        }
+        &::after{
+          content:'';
+          display: block;
+          width: 0;
+          height: 2px;
+          position: relative;
+          height: 3px;
+          background: $red-accent;
+          transition: width .3s;
         }
       }
     }
@@ -51,20 +107,78 @@
 
 
 #hero-section{
-  padding: 150px 0px 100px  0px;
-  min-height: 350px;
+  @include typed;
+  min-height: 550px;
+  padding: 150px 0px 0px  0px;
   background: url(/images/hero.png);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: relative;
   .hero-text{
     font-family: $font-heading;
-    font-weight: 700;
     font-size: 5.7rem;
+    #sub-about{
+      font-size: 3.0rem;
+      transition: visibility 0s, opacity 0.5s linear;
+      visibility: hidden;
+      opacity: 0;
+      display: block;
+    }
+  }
+  .btn{
+    margin-top: 20px;
+    color:$white-accent;
+    font-family: $font-heading;
+    &.btn-head-hunter{
+      background: $red-accent;
+    }
+    &.btn-customer{
+      background: $blue-accent;
+    }
+  }
+  .page-scroll{
+    i{
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      display: block;
+    }
+   &:hover{
+     i{
+       padding-top: 10px;
+     }
+   }
+    a{
+
+      text-decoration: none;
+      color:$grey-font;
+      padding: 50px 0px;
+      position: relative;
+      font-size: 1.8rem;
+      font-weight: bold;
+      font-family: $font-heading;
+      display: block;
+    }
+  }
+  & *{
+    position: relative;
   }
 }
+.overlay:before{
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: block;
+  opacity: 0.6;
+  z-index:0;
+  background-image: url(/images/alpha.png);
+}
 #mapkit-4923 {
-    min-height:350px;
+    min-height:400px;
 }
 
 
@@ -76,20 +190,52 @@
   p{
     @extend .text-info;
   }
+  #ui-design{
+    @include image-thumb('/images/ui.gif');
+  }
+  #webapp{
+    @include image-thumb('/images/webapp.gif');
+  }
+  #weekend-hack{
+      @include image-thumb('/images/hack.gif');
+  }
 }
 
 #projects {
+  position: relative;
   hr{
 
    border-top: 1px solid $grey-dark;
 
   }
-  background: $grey-light;
   @include  section-padding;
   @include  setion-heading;
   @include  sub-headers($red-accent);
   p{
     @extend .text-info;
+  }
+
+  #emergencyph{
+      @include image-thumb('/images/emergencyph.png');
+  }
+  #goodchoice{
+      @include image-thumb('/images/goodchoice.png');
+  }
+  #cordova-jayme{
+      @include image-thumb('/images/cjc.png');
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: $grey-light;
+    transform: skew(0,-12deg);
+  }
+  & *{
+    position: relative;
   }
 }
 #testi{
@@ -114,10 +260,56 @@
 }
 
 footer{
+  #contact-form-section{
+    #sub-details{
+      .business-headshot{
+        border: 5px solid $white-accent;
+        box-sizing: border-box;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin: -60px auto 0px auto;
+        img{
+          width: 100%;
+        }
+      }
+      #phone-num{
+        display: inline-block;
+        margin-top: 20px;
+        &.label{
+          background: transparentize($blue-accent, 0.3);
+          font-size: 1.6rem;
+        }
+        &.label:hover{
+          background: $blue-accent;
+        }
+        font-family: $font-heading;
+      }
+    }
 
+    #client-details{
+      padding: 40px 0px;
+      #client-sub-details{
+        input{
+          margin-bottom: 10px;
+        }
+      }
+      .btn{
+        background: transparentize($blue-accent, 0.3);
+        color:$white-accent;
+        font-family: $font-heading;
+        &:hover{
+          background: $blue-accent;
+        }
+      }
+    }
+
+  }
   #sub-footer{
     #logo-copyright{
-      padding: 40px 0px 10px 0px;
+      padding: 80px 0px 10px 0px;
       .footer-logo{
         width: 40px;
       }
@@ -130,7 +322,9 @@ footer{
       }
     }
     #social-media-links{
-      padding-bottom: 40px;
+      margin-top: 20px;
+
+      padding-bottom: 80px;
       li{
           display: inline;
           a{

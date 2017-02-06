@@ -108,7 +108,7 @@ function bindInfoWindow(marker, map, location) {
 function init() {
     var mapOptions = {
         center: new google.maps.LatLng(14.542756, 121.078190),
-        zoom: 16,
+        zoom: 14,
         gestureHandling: 'auto',
         fullscreenControl: false,
         zoomControl: true,
