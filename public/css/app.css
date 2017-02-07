@@ -261,7 +261,11 @@ footer #contact-form-section #sub-details .business-headshot {
   position: relative;
   margin: -60px auto 0px auto; }
   footer #contact-form-section #sub-details .business-headshot img {
-    width: 100%; }
+    width: 100%;
+    filter: grayscale(100%);
+    border-radius: 50%; }
+    footer #contact-form-section #sub-details .business-headshot img:hover {
+      filter: none; }
 
 footer #contact-form-section #sub-details #phone-num {
   display: inline-block;
